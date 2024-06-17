@@ -13,7 +13,6 @@ function App() {
     )
       .then((res) => res.json())
       .then((finalRes) => {
-        console.log(finalRes);
         if (finalRes.cod == "404") {
           setwdetails(undefined);
         } else {
@@ -25,17 +24,13 @@ function App() {
     event.preventDefault();
     setCity("");
   };
-  let changeCounter = () => {
-    setCounter(counter + 1);
-  };
+
   useEffect(() => {
     console.log("Welcome to Weather App");
   }, [counter]);
   return (
     <div className="w-full h-screen bg-[#76c8cc] flex items-center justify-center">
       <div className="max-w-[1320px] mx-auto text-center">
-        {counter}
-        <button onClick={changeCounter}>Count</button>
         <h1 className="text-[40px] font-bold py-[50px] text-white">
           Simple Weather App
         </h1>
